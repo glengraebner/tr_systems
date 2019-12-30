@@ -1,0 +1,84 @@
+/*
+Title: TMOF Base Stylesheet
+Author: GDSC
+Author URI: http://gdscofct.com/
+Author Email: contact@gdscofct.com
+Version: 1.0
+Description:
+    This is the baseline stylesheet for the Tech Manual of the Future.
+    It is referenced by index.html.
+*/
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - General Layout
+ * 2.0 - Security Bar
+ * 3.0 - Header Bar
+ * 4.0 - Detail Bar
+ * 5.0 - Navigation Window
+ * 6.0 - Separator
+ * 7.0 - Content Window
+ * 8.0 - Quick Link Tray
+ * -----------------------------------------------------------------------------
+ */
+
+/**
+ * 1.0 General Layout
+ *
+ * This is detail about general layout ...
+ *
+ * -----------------------------------------------------------------------------
+ */
+
+body {
+    margin: 0px;
+    overflow: hidden;
+    font-family: sans-serif;
+    font-size: 10pt;
+}
+
+#div_main {
+    width: 100%;
+    float: left;
+}
+
+#div_top {
+    border-style: outset;
+    border-width: thin;
+    float: left;
+}
+
+#div_top_left {
+    border-style: outset;
+    border-width: thin;
+    float: left;
+}
+
+#div_top_right {
+    border-style: outset;
+    border-width: thin;
+    float: left;
+}
+
+#div_bottom {
+    border-style: outset;
+    border-width: thin;
+    float: left;
+}
+
+#div_bottom_left {
+    border-style: outset;
+    border-width: thin;
+    float: left;
+}
+
+#div_bottom_right {
+    border-style: outset;
+    border-width: thin;
+    float: left;
+}
+
+#table1 {
+    
+}
