@@ -38,6 +38,11 @@ body {
     font-size: 10pt;
 }
 
+td {
+    border-style: outset;
+    border-width: thin;    
+}
+
 #div_main {
     width: 100%;
     float: left;
@@ -47,6 +52,7 @@ body {
     border-style: outset;
     border-width: thin;
     float: left;
+    margin: 5px;
 }
 
 #div_top_left {
@@ -65,6 +71,7 @@ body {
     border-style: outset;
     border-width: thin;
     float: left;
+    margin: 5px;
 }
 
 #div_bottom_left {
@@ -80,5 +87,10 @@ body {
 }
 
 #table1 {
-    
+    width: 100%;
+    font-size: 8pt;
+}
+
+.trhdr {
+    background-color: darkgray;
 }
