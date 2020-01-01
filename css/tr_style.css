@@ -40,7 +40,9 @@ body {
 
 td {
     border-style: outset;
-    border-width: thin;    
+    border-width: thin;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #div_main {
@@ -86,11 +88,37 @@ td {
     float: left;
 }
 
-#table1 {
+#table1, #table2 {
     width: 100%;
     font-size: 8pt;
 }
 
 .trhdr {
-    background-color: darkgray;
+    background-color: silver;
+}
+
+#trsys_title {
+    float: left;
+    width: 100%;
+    font-size: 8pt;
+    padding: 4px;
+}
+
+#trsys_body {
+    float: left;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+#parts_title {
+    float: left;
+    width: 100%;
+    font-size: 8pt;
+    padding: 4px;
+}
+
+#parts_body {
+    float: left;
+    width: 100%;
+    overflow-y: scroll;
 }

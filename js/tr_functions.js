@@ -75,17 +75,128 @@ function loadTRSystems()
             tr1.appendChild(td7);
             tr1.appendChild(td8);
             tr1.appendChild(td9);
+            tr1.id = trsystems[i]['HSC'];
             document.getElementById('table1').appendChild(tr1);
+            document.getElementById('table1').addEventListener("click", selectSystem)
         }
         
         // var cilength = configitems.length;
         // var partlength = allparts.length;
         // var obslength = obsolescence.length;
         redisplayTR();
+        
     }
-    catch(ex)
+    
+    catch(ex1)
     {
-        alert(ex.message);
+        
+        alert(ex1.message);
+        
+    }
+}
+
+function selectSystem(evt) {
+    
+    try {
+        
+        var cilength = configitems.length;
+        var allpartslength = allparts.length;
+        var obslength = obsolescence.length;
+        var hsc = evt.srcElement.parentNode.id;
+        var txt1;
+        
+        if(hsc != '') {
+          
+            var trhd1 = document.createElement('tr');
+            var tdhd1 = document.createElement('td');
+            var tdhd2 = document.createElement('td');
+            var tdhd3 = document.createElement('td');
+            var tdhd4 = document.createElement('td');
+            var tdhd5 = document.createElement('td');
+            var tdhd6 = document.createElement('td');
+            var tdhd7 = document.createElement('td');
+            var tdhd8 = document.createElement('td');
+            
+            document.getElementById('table2').innerHTML = '';
+            
+            tdhd1.innerHTML = 'HSC';
+            tdhd2.innerHTML = 'Title';
+            tdhd3.innerHTML = 'Track_for_Obsolescence';
+            tdhd4.innerHTML = 'Part_Number';
+            tdhd5.innerHTML = 'Cost';
+            tdhd6.innerHTML = 'Cost_Date';
+            tdhd7.innerHTML = 'OBS_Criticality';
+            tdhd8.innerHTML = 'Tech_Refresh_Date';
+            tdhd1.setAttribute('class','trhdr');
+            tdhd2.setAttribute('class','trhdr');
+            tdhd3.setAttribute('class','trhdr');
+            tdhd4.setAttribute('class','trhdr');
+            tdhd5.setAttribute('class','trhdr');
+            tdhd6.setAttribute('class','trhdr');
+            tdhd7.setAttribute('class','trhdr');
+            tdhd8.setAttribute('class','trhdr');
+            trhd1.appendChild(tdhd1);
+            trhd1.appendChild(tdhd2);
+            trhd1.appendChild(tdhd3);
+            trhd1.appendChild(tdhd4);
+            trhd1.appendChild(tdhd5);
+            trhd1.appendChild(tdhd6);
+            trhd1.appendChild(tdhd7);
+            trhd1.appendChild(tdhd8);
+            document.getElementById('table2').appendChild(trhd1);
+            
+            for(var i=0;i<cilength;i++) {
+                txt1 = configitems[i]['HSC'].substring(0,hsc.length);
+                if(txt1 === hsc) { // all HSCs that are subsets of the selected HSC                  
+                    for(var j=0;j<allpartslength;j++) {
+                        if(allparts[j]['HSC'] === configitems[i]['HSC']) {
+                            
+                            var tr1 = document.createElement('tr');
+                            var td1 = document.createElement('td');
+                            var td2 = document.createElement('td');
+                            var td3 = document.createElement('td');
+                            var td4 = document.createElement('td');
+                            var td5 = document.createElement('td');
+                            var td6 = document.createElement('td');
+                            var td7 = document.createElement('td');
+                            var td8 = document.createElement('td');
+
+                            td1.innerHTML = allparts[j]['HSC'];
+                            td2.innerHTML = allparts[j]['Title'];
+                            td3.innerHTML = allparts[j]['Track_for_Obsolescence'];
+                            td4.innerHTML = allparts[j]['Part_Number'];
+                            td5.innerHTML = allparts[j]['Cost'];
+                            td6.innerHTML = allparts[j]['Cost_Date'];
+                            
+                            for(var k=0;k<obslength;k++) {
+                                if(obsolescence[k]['Part_Number'] === allparts[j]['Part_Number']) {
+                                    td7.innerHTML = obsolescence[k]['OBS_Criticality'];
+                                    td8.innerHTML = obsolescence[k]['Tech_Refresh_Date'];
+                                }
+                            }
+
+                            tr1.appendChild(td1);
+                            tr1.appendChild(td2);
+                            tr1.appendChild(td3);
+                            tr1.appendChild(td4);
+                            tr1.appendChild(td5);
+                            tr1.appendChild(td6);
+                            tr1.appendChild(td7);
+                            tr1.appendChild(td8);
+
+                            document.getElementById('table2').appendChild(tr1);                            
+                            
+                        }
+                    }               
+                } 
+            }
+        }
+    }
+    
+    catch(ex2) {
+        
+        alert(ex2.message);
+        
     }
 }
 
